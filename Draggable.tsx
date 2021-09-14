@@ -108,6 +108,9 @@
        bottom: top + childSize.current.y,
      };
    }, [x, y]);
+
+
+   
  
    const shouldStartDrag = React.useCallback(
      gs => {
@@ -194,6 +197,14 @@
      onPanResponderRelease,
      shouldStartDrag,
    ]);
+
+
+   React.useEffect(() => {
+    const curPan = pan.current; // Using an instance to avoid losing the pointer before the cleanup
+    pan.current.setValue({x: x, y: y < yOffset? y : y - yOffset});
+  }, [yOffset]);
+
+
  
    // TODO Figure out a way to destroy and remove offsetFromStart entirely
    React.useEffect(() => {
