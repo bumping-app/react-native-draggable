@@ -314,7 +314,7 @@
          pointerEvents="box-none"
          {...animatedViewProps}
          {...panResponder.panHandlers}
-         style={{alignSelf: 'flex-start', borderWidth:3, borderColor: '#00ff00', ...pan.current.getLayout()}}>
+         style={{alignSelf: 'flex-start', borderWidth:0, borderColor: '#00ff00', ...pan.current.getLayout()}}>
          <TouchableOpacity
            {...touchableOpacityProps}
            onLayout={handleOnLayout}
